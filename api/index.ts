@@ -1,4 +1,5 @@
-import express, { Request, Response } from 'express'
+import { VercelRequest, VercelResponse } from '@vercel/node'
+import express from 'express'
 import cors from 'cors'
 import numberClasifier from './src/routes/numberClassifier'
 
@@ -18,6 +19,6 @@ app.get('/', (req, res) => {
   })
 })
 
-export default (req: Request, res: Response) => {
-  app(req, res)
+export default (req: VercelRequest, res: VercelResponse) => {
+  app(req as any, res as any) // Ensure correct Express compatibility
 }
