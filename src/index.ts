@@ -1,6 +1,6 @@
 import express, { Request, Response } from 'express'
 import cors from 'cors'
-import numberClasifier from './src/routes/numberClassifier'
+import numberClasifier from './routes/numberClassifier'
 
 const app = express()
 const PORT = process.env.PORT || 8000
