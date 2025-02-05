@@ -1,4 +1,4 @@
-import express from 'express'
+import express, { Request, Response } from 'express'
 import cors from 'cors'
 import numberClasifier from './src/routes/numberClassifier'
 
@@ -18,10 +18,6 @@ app.get('/', (req, res) => {
   })
 })
 
-if (require.main === module) {
-  app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`)
-  })
+export default (req: Request, res: Response) => {
+  app(req, res)
 }
-
-export default app
