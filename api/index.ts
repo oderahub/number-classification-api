@@ -12,7 +12,10 @@ app.use(numberClasifier)
 app.disable('x-powered-by')
 
 app.get('/', (req, res) => {
-  res.status(200).send('Hello World')
+  res.status(200).json({
+    message:
+      'Welcome to the Number Classification API! Use /api/classify-number?number=<your_number>'
+  })
 })
 
 if (require.main === module) {
